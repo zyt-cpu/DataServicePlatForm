@@ -1,0 +1,13 @@
+server:
+  port: 8082
+spring:
+
+  #通用的的数据源配置。
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tempcoin?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: qdzj.zyt.99.1218
+  jpa:
+    hibernate:
+      ddl-auto: update
