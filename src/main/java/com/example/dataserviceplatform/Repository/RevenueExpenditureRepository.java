@@ -12,4 +12,6 @@ public interface RevenueExpenditureRepository extends JpaRepository<RevenueExpen
     List<RevenueExpenditure> findAll();
     RevenueExpenditure getRevenueExpenditureById(Integer id);
 
+    void deleteRevenueExpenditureById(Integer id);
+
 }
