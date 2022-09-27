@@ -3,15 +3,21 @@ package com.example.dataserviceplatform.Controller;
 import com.example.dataserviceplatform.Entity.Project;
 import com.example.dataserviceplatform.Result.ResponseVO;
 import com.example.dataserviceplatform.Service.ProjectService;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import lombok.NoArgsConstructor;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
+import com.alibaba.fastjson.JSONObject;
 
+import static org.apache.logging.log4j.message.MapMessage.MapFormat.JSON;
+
+/*
+* @author zyt
+* @date 2022-9-21
+*
+* */
 @RestController
 @RequestMapping("/projectMsg")
 public class ProjectController {
@@ -25,9 +31,13 @@ public class ProjectController {
 
     @PostMapping("/addProject")
     public ResponseVO addProject(@RequestBody JSONObject jsonObject){
-        Project project=new Project();
-        //project.setProjectLevel(jsonObject.get("123"));
-        System.out.print(jsonObject);
+       Project project=jsonObject.toJavaObject(Project.class);
+
+        //project.setProjectLevel(jsonObject.get("123").toString());
+//        System.out.println("controller");
+//        System.out.println(jsonObject);
+//        System.out.println(project);
+        projectService.addProject(project);
 //        projectService.addProject(project);
         return ResponseVO.buildSuccess();
     }
@@ -35,6 +45,12 @@ public class ProjectController {
     @GetMapping("/modifyProjectLevel/{project_id}/{project_level}")
     public ResponseVO modifyProjectLevel(@PathVariable("project_id") Integer pid ,@PathVariable("project_level") Integer level){
         projectService.modifyProjectLevel(pid,level);
+        return ResponseVO.buildSuccess();
+    }
+
+    @GetMapping("/deleteProject")
+    public ResponseVO deleteProject(Integer id){
+        projectService.deleteById(id);
         return ResponseVO.buildSuccess();
     }
 }

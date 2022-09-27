@@ -22,16 +22,16 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public void addProject(Project project){
-
+        System.out.println("service");
         projectRepository.save(project);
     }
 
     @Override
     @Transactional
     public void modifyProjectLevel(Integer id,Integer level){
-        System.out.print("modify begin");
+        //System.out.print("modify begin");
         projectRepository.modify(id,level);
-        System.out.print("modify end");
+        //System.out.print("modify end");
 //        Project project=projectRepository.getProjectById(id);
 //        project.setProjectLevel(level);
 //        //修改方法
@@ -42,5 +42,10 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public Project getProject(Integer id){
         return projectRepository.getProjectById(id);
+    }
+
+    @Override
+    public void deleteById(Integer id){
+        projectRepository.deleteById(id);
     }
 }

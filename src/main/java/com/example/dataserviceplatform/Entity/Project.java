@@ -21,7 +21,7 @@ public class Project implements Serializable {
     private static final long serialVersionUID = 1L;
 
 
-    @GeneratedValue
+    @GeneratedValue(generator = "id")
     /**
      * 编号
      */
@@ -93,13 +93,13 @@ public class Project implements Serializable {
      * 项目状态 0在研1结题
      */
     @Column(name="project_status")
-    private String projectStatus;
+    private int projectStatus;
 
     /**
      * 合同归档 0未归档1已归档2无单独合同
      */
     @Column(name="contract_archiving")
-    private String contractArchiving;
+    private int contractArchiving;
 
     /**
      * 项目等级 0正常、1进度延期、2超低利润、4延期回款、8安全风险、16进度延期-自动
@@ -135,7 +135,7 @@ public class Project implements Serializable {
      * 是否删除
      */
     @Column(name="deleted")
-    private String deleted;
+    private int deleted;
 
     /**
      * 参与人员贡献度
@@ -153,7 +153,7 @@ public class Project implements Serializable {
      * 投标保证金是否退回(0未退1已退)
      */
     @Column(name="bid_security_return")
-    private String bidSecurityReturn;
+    private int bidSecurityReturn;
 
     /**
      * 中标服务费
@@ -165,7 +165,7 @@ public class Project implements Serializable {
      * 中标服务费是否开发票
      */
     @Column(name="bid_fee_invoicing")
-    private String bidFeeInvoicing;
+    private int bidFeeInvoicing;
 
     /**
      * 应收款=累计开票-全部回款（在收支表插入开票或回款时修改）
@@ -177,7 +177,7 @@ public class Project implements Serializable {
      * 跨年度工程类合同:0否1是
      */
     @Column(name="engineering")
-    private String engineering;
+    private int engineering;
 
     public Project() {
     }

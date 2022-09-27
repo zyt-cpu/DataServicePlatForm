@@ -29,4 +29,11 @@ public interface ProjectService {
     * @param id
     * */
     Project getProject(Integer id);
+
+    /*
+    * 根据简称删除项目
+    * @param contractAbbreviation
+    * */
+    void deleteById(Integer id);
+
 }
