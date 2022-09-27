@@ -91,7 +91,8 @@ CREATE TABLE `revenue_expenditure`  (
   `generation_date` datetime DEFAULT NULL COMMENT '产生日期',
   `amount` float(10, 2) DEFAULT NULL COMMENT '金额',
   `column_describe` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '描述',
-  `column_type` int(11) DEFAULT NULL COMMENT '栏目类型 1年度开票2年度回款3差旅、招待4劳务派遣工资5劳务及专家费6外委材料已开票7外委设备已开票8外委服务已开票9其它支出10预付11分摊12未结算成本13已付款14固定资产15安环综合支出',
+  `column_type` int(11) DEFAULT NULL COMMENT '栏目类型 1年度开票2年度回款3差旅、招待4劳务派遣工资5劳务及专家费
+  6外委材料已开票7外委设备已开票8外委服务已开票9其它支出10预付11分摊12未结算成本13已付款14固定资产15安环综合支出',
   `deleted` bit(1) DEFAULT b'0' COMMENT '是否删除',
   `remarks` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE
