@@ -22,6 +22,7 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public void addProject(Project project){
+
         projectRepository.save(project);
     }
 
@@ -36,5 +37,10 @@ public class ProjectServiceImpl implements ProjectService {
 //        //修改方法
 //
 //        projectRepository.saveAndFlush(project);
+    }
+
+    @Override
+    public Project getProject(Integer id){
+        return projectRepository.getProjectById(id);
     }
 }

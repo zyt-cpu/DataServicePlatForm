@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ProjectService {
     /*
-    *查找项目
+    *查找所有项目
     * */
     List<Project> getAllProject();
 
@@ -23,4 +23,10 @@ public interface ProjectService {
     * @Param id,level
     * */
     void modifyProjectLevel(Integer id,Integer level);
+
+    /*
+    * 查找单个项目
+    * @param id
+    * */
+    Project getProject(Integer id);
 }
