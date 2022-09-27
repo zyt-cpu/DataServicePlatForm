@@ -14,7 +14,6 @@ public class ReportController {
 
     @GetMapping("/getAllReport")
     public ResponseVO getAllReport(){
-        System.out.print("controller");
         return ResponseVO.buildSuccess(reportService.getAllReport());
     }
 

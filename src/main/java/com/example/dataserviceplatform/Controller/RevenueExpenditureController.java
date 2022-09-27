@@ -16,13 +16,11 @@ public class RevenueExpenditureController {
 
     @GetMapping("/getAllRevenue")
     public ResponseVO getAllRevenue(){
-        System.out.print("controller");
         return ResponseVO.buildSuccess(revenueExpenditureService.getAllRevenueExpenditure());
     }
 
     @GetMapping("/findRevenueById")
     public ResponseVO findRevenueById(Integer id){
-        System.out.print("controller");
         return ResponseVO.buildSuccess(revenueExpenditureService.getRevenueExpenditureById(id));
     }
 }

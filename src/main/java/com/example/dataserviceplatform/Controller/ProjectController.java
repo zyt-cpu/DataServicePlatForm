@@ -18,7 +18,6 @@ public class ProjectController {
 
     @GetMapping("/getAllProject")
     public ResponseVO getAllProject(){
-        System.out.print("controller");
         return ResponseVO.buildSuccess(projectService.getAllProject());
     }
 
@@ -29,7 +28,7 @@ public class ProjectController {
         return ResponseVO.buildSuccess();
     }
 
-    @GetMapping("/modifyProjectLevel/{project_if}/{project_level}")
+    @GetMapping("/modifyProjectLevel/{project_id}/{project_level}")
     public ResponseVO modifyProjectLevel(@PathVariable("project_id") Integer pid ,@PathVariable("project_level") Integer level){
         projectService.modifyProjectLevel(pid,level);
         return ResponseVO.buildSuccess();
