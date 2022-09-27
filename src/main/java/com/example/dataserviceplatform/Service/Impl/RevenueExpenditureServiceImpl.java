@@ -22,4 +22,14 @@ public class RevenueExpenditureServiceImpl implements RevenueExpenditureService 
     public RevenueExpenditure getRevenueExpenditureById(Integer id) {
         return revenueExpenditureRepository.getRevenueExpenditureById(id);
     }
+
+    @Override
+    public void deleteRevenueExpenditureById(Integer id) {
+        revenueExpenditureRepository.deleteRevenueExpenditureById(id);
+    }
+
+    @Override
+    public void addRevenueExpenditure(RevenueExpenditure revenueExpenditure) {
+        revenueExpenditureRepository.save(revenueExpenditure);
+    }
 }

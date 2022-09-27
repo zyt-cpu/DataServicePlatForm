@@ -10,4 +10,8 @@ public interface RevenueExpenditureService {
     List<RevenueExpenditure> getAllRevenueExpenditure();
 
     RevenueExpenditure getRevenueExpenditureById(Integer id);
+
+    void deleteRevenueExpenditureById(Integer id);
+
+    void addRevenueExpenditure(RevenueExpenditure revenueExpenditure);
 }
