@@ -89,4 +89,17 @@ public class RevenueExpenditure implements Serializable {
     public RevenueExpenditure() {
     }
 
+    public RevenueExpenditure(Integer id, Integer projectId, String creatorId, Date createTime, Integer projectYear, Date generationDate, Float amount, String columnDescribe, Integer columnType, String deleted, String remarks) {
+        this.id = id;
+        this.projectId = projectId;
+        this.creatorId = creatorId;
+        this.createTime = createTime;
+        this.projectYear = projectYear;
+        this.generationDate = generationDate;
+        this.amount = amount;
+        this.columnDescribe = columnDescribe;
+        this.columnType = columnType;
+        this.deleted = deleted;
+        this.remarks = remarks;
+    }
 }

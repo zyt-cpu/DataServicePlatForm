@@ -1,5 +1,6 @@
 package com.example.dataserviceplatform.Controller;
 
+import org.json.JSONObject;
 import com.example.dataserviceplatform.Entity.Project;
 import com.example.dataserviceplatform.Entity.RevenueExpenditure;
 import com.example.dataserviceplatform.Result.ResponseVO;
@@ -25,15 +26,19 @@ public class RevenueExpenditureController {
         return ResponseVO.buildSuccess(revenueExpenditureService.getRevenueExpenditureById(id));
     }
 
-    @GetMapping("/deleteRevenueById")
-    public void deleteRevenueById(Integer id){
-        System.out.print("controller");
-        revenueExpenditureService.deleteRevenueExpenditureById(id);
+    @GetMapping("/deleteRevenueById/{id}")
+    public ResponseVO deleteRevenueById(@PathVariable("id") Integer id){
+        if (findRevenueById(id).getContent()!=null){
+            revenueExpenditureService.deleteRevenueExpenditureById(id);
+            return ResponseVO.buildSuccess();
+        }
+        return ResponseVO.buildFailure("删除失败");
     }
 
-    @GetMapping("/addRevenue")
-    public ResponseVO addRevenue(@RequestBody JSONPObject jsonpObject){
+    @PostMapping("/addRevenue")
+    public ResponseVO addRevenue(@RequestBody JSONObject jsonpObject){
         RevenueExpenditure revenueExpenditure = new RevenueExpenditure();
+        System.out.println(jsonpObject);
         revenueExpenditureService.addRevenueExpenditure(revenueExpenditure);
         return ResponseVO.buildSuccess();
     }

@@ -5,6 +5,7 @@ import com.example.dataserviceplatform.Repository.RevenueExpenditureRepository;
 import com.example.dataserviceplatform.Service.RevenueExpenditureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -24,6 +25,7 @@ public class RevenueExpenditureServiceImpl implements RevenueExpenditureService 
     }
 
     @Override
+    @Transactional
     public void deleteRevenueExpenditureById(Integer id) {
         revenueExpenditureRepository.deleteRevenueExpenditureById(id);
     }
