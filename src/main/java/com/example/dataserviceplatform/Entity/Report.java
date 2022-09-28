@@ -31,6 +31,14 @@ public class Report implements Serializable {
      */
     @Column(name="project_id")
     private Integer projectId;
+    public Integer getProjectId() {
+        return projectId;
+    }
+
+
+    public void setProjectId(Integer projectId) {
+        this.projectId = projectId;
+    }
 
     /**
      * 创建人编号 当前用户id
@@ -108,7 +116,7 @@ public class Report implements Serializable {
      * 序号
      */
     @Column(name="serial_number")
-    private Integer serialNumber;
+    private Integer C;
 
     /**
      * 备注
@@ -116,7 +124,126 @@ public class Report implements Serializable {
     @Column(name="remarks")
     private String remarks;
 
-    public Report() {
+    public Integer getId() {
+        return id;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getCreatorId() {
+        return creatorId;
+    }
+
+    public void setCreatorId(Integer creatorId) {
+        this.creatorId = creatorId;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getAgreedReportName() {
+        return agreedReportName;
+    }
+
+    public void setAgreedReportName(String agreedReportName) {
+        this.agreedReportName = agreedReportName;
+    }
+
+    public Date getAgreedSubmissionTime() {
+        return agreedSubmissionTime;
+    }
+
+    public void setAgreedSubmissionTime(Date agreedSubmissionTime) {
+        this.agreedSubmissionTime = agreedSubmissionTime;
+    }
+
+    public String getReportWriter() {
+        return reportWriter;
+    }
+
+    public void setReportWriter(String reportWriter) {
+        this.reportWriter = reportWriter;
+    }
+
+    public String getExaminer() {
+        return examiner;
+    }
+
+    public void setExaminer(String examiner) {
+        this.examiner = examiner;
+    }
+
+    public String getApprover() {
+        return approver;
+    }
+
+    public void setApprover(String approver) {
+        this.approver = approver;
+    }
+
+    public String getReviewer() {
+        return reviewer;
+    }
+
+    public void setReviewer(String reviewer) {
+        this.reviewer = reviewer;
+    }
+
+    public Date getAuditTime() {
+        return auditTime;
+    }
+
+    public void setAuditTime(Date auditTime) {
+        this.auditTime = auditTime;
+    }
+
+    public String getReportArchiving() {
+        return reportArchiving;
+    }
+
+    public void setReportArchiving(String reportArchiving) {
+        this.reportArchiving = reportArchiving;
+    }
+
+    public String getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(String deleted) {
+        this.deleted = deleted;
+    }
+
+    public Integer getProjectYear() {
+        return projectYear;
+    }
+
+    public void setProjectYear(Integer projectYear) {
+        this.projectYear = projectYear;
+    }
+
+    public Integer getC() {
+        return C;
+    }
+
+    public void setC(Integer c) {
+        C = c;
+    }
+
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
+    }
+
+    public Report() {
+    }
 }

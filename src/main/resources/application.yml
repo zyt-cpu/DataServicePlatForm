@@ -5,9 +5,9 @@ spring:
   #通用的的数据源配置。
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/dataserviceplatform?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/project_lifecycle?useUnicode=true&characterEncoding=UTF-8
     username: root
-    password: qdzj.zyt.99.1218
+    password: 1123952618zfy
   jpa:
     hibernate:
       ddl-auto: update
