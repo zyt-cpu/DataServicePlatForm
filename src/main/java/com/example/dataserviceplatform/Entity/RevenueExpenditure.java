@@ -102,4 +102,109 @@ public class RevenueExpenditure implements Serializable {
         this.deleted = deleted;
         this.remarks = remarks;
     }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public Integer getProjectId() {
+        return projectId;
+    }
+
+    public String getCreatorId() {
+        return creatorId;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public Integer getProjectYear() {
+        return projectYear;
+    }
+
+    public Date getGenerationDate() {
+        return generationDate;
+    }
+
+    public Float getAmount() {
+        return amount;
+    }
+
+    public String getColumnDescribe() {
+        return columnDescribe;
+    }
+
+    public Integer getColumnType() {
+        return columnType;
+    }
+
+    public String getDeleted() {
+        return deleted;
+    }
+
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setProjectId(Integer projectId) {
+        this.projectId = projectId;
+    }
+
+    public void setCreatorId(String creatorId) {
+        this.creatorId = creatorId;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public void setProjectYear(Integer projectYear) {
+        this.projectYear = projectYear;
+    }
+
+    public void setGenerationDate(Date generationDate) {
+        this.generationDate = generationDate;
+    }
+
+    public void setAmount(Float amount) {
+        this.amount = amount;
+    }
+
+    public void setColumnDescribe(String columnDescribe) {
+        this.columnDescribe = columnDescribe;
+    }
+
+    public void setColumnType(Integer columnType) {
+        this.columnType = columnType;
+    }
+
+    public void setDeleted(String deleted) {
+        this.deleted = deleted;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
+    }
+
+    @Override
+    public String toString() {
+        return "RevenueExpenditure{" +
+                "id=" + id +
+                ", projectId=" + projectId +
+                ", creatorId='" + creatorId + '\'' +
+                ", createTime=" + createTime +
+                ", projectYear=" + projectYear +
+                ", generationDate=" + generationDate +
+                ", amount=" + amount +
+                ", columnDescribe='" + columnDescribe + '\'' +
+                ", columnType=" + columnType +
+                ", deleted='" + deleted + '\'' +
+                ", remarks='" + remarks + '\'' +
+                '}';
+    }
 }

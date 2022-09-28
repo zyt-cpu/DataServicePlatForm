@@ -1,11 +1,8 @@
 package com.example.dataserviceplatform.Controller;
 
-import org.json.JSONObject;
-import com.example.dataserviceplatform.Entity.Project;
 import com.example.dataserviceplatform.Entity.RevenueExpenditure;
 import com.example.dataserviceplatform.Result.ResponseVO;
 import com.example.dataserviceplatform.Service.RevenueExpenditureService;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,9 +33,11 @@ public class RevenueExpenditureController {
     }
 
     @PostMapping("/addRevenue")
-    public ResponseVO addRevenue(@RequestBody JSONObject jsonpObject){
-        RevenueExpenditure revenueExpenditure = new RevenueExpenditure();
-        System.out.println(jsonpObject);
+    public ResponseVO addRevenue(@RequestBody RevenueExpenditure revenueExpenditure){
+        System.out.println(revenueExpenditure);
+        if (findRevenueById(revenueExpenditure.getId()).getContent()!=null) {
+            return ResponseVO.buildFailure("该id数据已存在");
+        }
         revenueExpenditureService.addRevenueExpenditure(revenueExpenditure);
         return ResponseVO.buildSuccess();
     }

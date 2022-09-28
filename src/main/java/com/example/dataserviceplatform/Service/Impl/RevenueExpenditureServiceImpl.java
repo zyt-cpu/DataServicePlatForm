@@ -14,6 +14,7 @@ public class RevenueExpenditureServiceImpl implements RevenueExpenditureService 
 
     @Autowired
     private RevenueExpenditureRepository revenueExpenditureRepository;
+
     @Override
     public List<RevenueExpenditure> getAllRevenueExpenditure() {
         return revenueExpenditureRepository.findAll();

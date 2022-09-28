@@ -3,6 +3,7 @@ package com.example.dataserviceplatform.Repository;
 import com.example.dataserviceplatform.Entity.Project;
 import com.example.dataserviceplatform.Entity.RevenueExpenditure;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,5 +15,7 @@ public interface RevenueExpenditureRepository extends JpaRepository<RevenueExpen
     RevenueExpenditure getRevenueExpenditureById(Integer id);
 
     void deleteRevenueExpenditureById(Integer id);
+
+//    void addRevenueExpenditure(RevenueExpenditure revenueExpenditure);
 
 }
