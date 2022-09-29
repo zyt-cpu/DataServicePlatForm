@@ -3,6 +3,7 @@ package com.example.dataserviceplatform.Service;
 import com.example.dataserviceplatform.Entity.Project;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -36,4 +37,10 @@ public interface ProjectService {
     * */
     void deleteById(Integer id);
 
+
+    /*
+    * 数据统计
+    * */
+
+    HashMap<String,HashMap<String,String>> projectStastic();
 }

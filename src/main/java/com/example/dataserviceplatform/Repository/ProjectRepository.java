@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Repository
@@ -18,4 +19,7 @@ public interface ProjectRepository extends JpaRepository<Project,Integer>, JpaSp
     @Modifying
     @Query("update Project set projectLevel=:projectLevel where id=:id")
     void modify(@Param("id")Integer id, @Param("projectLevel")Integer projectLevel);
+
+    @Query("select researchOffice,receivable,sum(contractAmount) from Project group by researchOffice ")
+    HashMap<String,Integer> projectStasitc();
 }

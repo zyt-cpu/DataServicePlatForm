@@ -7,6 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.lang.reflect.Array;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -48,4 +52,25 @@ public class ProjectServiceImpl implements ProjectService {
     public void deleteById(Integer id){
         projectRepository.deleteById(id);
     }
+
+    @Override
+    public HashMap<String,HashMap<String,String>> projectStastic() {
+        List<Project> projects = projectRepository.findAll();
+        HashMap<String,HashMap<String,String>> result=new HashMap<>();
+        for (int i = 0; i < 5; i++) {
+            HashMap<String,String> o=new HashMap<>();
+            BigDecimal c=new BigDecimal("0");
+            float r=0;
+            for (int j = 0; j < projects.size(); j++) {
+                if (projects.get(j).getResearchOffice()==i){
+                    c.add(projects.get(j).getContractAmount());
+                    r+=projects.get(j).getReceivable();
+                }
+            }
+            o.put("amount",String.valueOf(c));
+            o.put("receivable",String.valueOf(r));
+            result.put(String.valueOf(i),o);
+        }
+        return result;
+    };
 }

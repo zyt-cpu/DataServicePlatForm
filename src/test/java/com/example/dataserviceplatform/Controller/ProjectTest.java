@@ -55,4 +55,9 @@ public class ProjectTest {
         // }
         projectController.addProject(jsonObject);
     }
+
+    @Test
+    public void projectStaticTest(){
+        System.out.print(projectController.projectStatis());
+    }
 }

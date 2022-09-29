@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/revenueMsg")
+@CrossOrigin(origins={"http://106.14.72.92:8002","http://106.14.72.92:8001","http://106.14.72.92","http://localhost:8082","http://localhost:8083","http://localhost","http://localhost:8080"}
+        , allowCredentials = "true")
 public class RevenueExpenditureController {
 
     @Autowired

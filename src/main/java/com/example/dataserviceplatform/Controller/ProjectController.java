@@ -19,6 +19,8 @@ import static org.apache.logging.log4j.message.MapMessage.MapFormat.JSON;
 *
 * */
 @RestController
+@CrossOrigin(origins={"http://106.14.72.92:8002","http://106.14.72.92:8001","http://106.14.72.92","http://localhost:8082","http://localhost:8083","http://localhost","http://localhost:8080"}
+        , allowCredentials = "true")
 @RequestMapping("/projectMsg")
 public class ProjectController {
     @Autowired
@@ -52,5 +54,10 @@ public class ProjectController {
     public ResponseVO deleteProject(Integer id){
         projectService.deleteById(id);
         return ResponseVO.buildSuccess();
+    }
+
+    @GetMapping("/Statistics")
+    public ResponseVO projectStatis(){
+        return ResponseVO.buildSuccess(projectService.projectStastic());
     }
 }
